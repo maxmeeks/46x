@@ -1,10 +1,10 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  // import {VueCsvImportPlugin} from "vue-csv-import"
+import { ref } from 'vue'
+// import {VueCsvImportPlugin} from "vue-csv-import"
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold">Dashboard Works</h1>
+  <h1 class="text-3xl font-bold">Dashboard Works heheheh</h1>
 
   <!-- <vue-csv-import
     v-slot="{file}"
