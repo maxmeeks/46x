@@ -3,6 +3,7 @@ import { createPinia } from 'pinia'
 import { createRouter, createWebHistory } from 'vue-router'
 
 import Dashboard from './views/Dashboard.vue'
+import Table from './views/Table.vue'
 
 import App from './App.vue'
 
@@ -11,8 +12,8 @@ const routes = {
   routes: [
     {
       path: '/',
-      name: 'dashboard',
-      component: Dashboard,
+      name: 'Table',
+      component: Table,
     },
   ],
 }

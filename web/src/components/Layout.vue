@@ -1,10 +1,9 @@
 <template>
-  <div class="app">
-    <div class="header">header</div>
+  <div class="app bg-gray-100">
     <main class="main">
       <router-view></router-view>
     </main>
-    <footer>footer</footer>
+    <footer></footer>
   </div>
   <template></template>
 </template>
