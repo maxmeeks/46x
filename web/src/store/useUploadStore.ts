@@ -2,17 +2,17 @@ import { defineStore } from 'pinia'
 
 export const useUploadStore = defineStore('uploadData', {
   state: () => ({
-    data: [],
+    _data: [],
     rawCsv: '',
   }),
   getters: {
     data(state) {
-      return state.data
+      return state._data
     },
   },
   actions: {
     setData(data) {
-      this.data = data
+      this._data = data
     },
   },
 })
