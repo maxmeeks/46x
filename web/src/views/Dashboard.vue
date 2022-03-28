@@ -1,14 +1,21 @@
 <script setup lang="ts">
-  import { ref } from 'vue'
-  import {VueCsvImportPlugin} from "vue-csv-import"
+import { ref } from 'vue'
+import ImportCsv from '../components/ImportCsv.vue'
+import { storeToRefs } from 'pinia'
+import { useUploadStore } from '../store/useUploadStore'
+
+const store = useUploadStore()
+const { data } = storeToRefs(store)
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold">Dashboard Works</h1>
+  <h1 class="text-3xl font-bold">Dashboard</h1>
 
-  <vue-csv-import>
-      <vue-csv-input name="file"></vue-csv-input>
-  </vue-csv-import>
+  <ImportCsv />
+
+  <ul>
+    <li v-for="item in data">{{ item }}</li>
+  </ul>
 </template>
 
 <style scoped></style>
