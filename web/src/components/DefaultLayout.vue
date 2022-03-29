@@ -5,7 +5,7 @@ import Footer from './Footer.vue'
 </script>
 
 <template>
-  <div class="flex h-screen bg-white">
+  <div class="flex h-screen bg-white font-inter">
     <Sidebar />
 
     <div class="flex-1 flex flex-col overflow-hidden">
