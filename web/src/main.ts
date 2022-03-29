@@ -1,29 +1,20 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import { createRouter, createWebHistory } from 'vue-router'
-
-import Dashboard from './views/Dashboard.vue'
-import Table from './views/Table.vue'
+import router from '@/router'
+import DefaultLayout from './components/DefaultLayout.vue'
+import EmptyLayout from './components/EmptyLayout.vue'
+import '@/styles/tailwind.css'
 
 import App from './App.vue'
 
-const routes = {
-  history: createWebHistory(),
-  routes: [
-    {
-      path: '/',
-      name: 'Table',
-      component: Table,
-    },
-  ],
-}
-
 const app = createApp(App)
 const pinia = createPinia()
-const router = createRouter(routes)
 
 app.use(pinia)
 app.use(router)
+
+app.component('default-layout', DefaultLayout)
+app.component('empty-layout', EmptyLayout)
 
 const vm = app.mount('#app')
 

@@ -1,11 +1,16 @@
-<script setup lang="ts">
-import Layout from './components/Layout.vue'
-</script>
-
 <template>
-  <Layout />
+  <component :is="layout">
+    <router-view />
+  </component>
 </template>
 
-<style lang="scss">
-@import './styles/index.scss';
-</style>
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRouter } from 'vue-router'
+
+const { currentRoute } = useRouter()
+
+const layout = computed(
+  () => `${currentRoute.value.meta.layout || 'default'}-layout`
+)
+</script>
