@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import ImportCsv from '../components/ImportCsv.vue'
 import { storeToRefs } from 'pinia'
-import { useUploadStore } from '../store/useUploadStore'
-import TitleBar from '@/components/TitleBar.vue'
+import { useCsvData } from '@/store/useCsvData'
 
-const store = useUploadStore()
+const store = useCsvData()
 const { data } = storeToRefs(store)
 </script>
 

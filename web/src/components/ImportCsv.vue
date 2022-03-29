@@ -1,18 +1,14 @@
 <template>
   <input ref="csvRef" @change="change" type="file" :name="name" />
-
-  <!-- <div v-if="data.length > 0">
-    <h2>Data</h2>
-  </div> -->
 </template>
 
 <script setup lang="ts">
 import { ref, reactive, watch } from 'vue'
 import Papa from 'papaparse'
 import { CsvImportData } from '../types'
-import { useUploadStore } from '../store/useUploadStore'
+import { useCsvData } from '@/store/useCsvData'
 
-const store = useUploadStore()
+const store = useCsvData()
 const { setData } = store
 
 const importData = reactive<CsvImportData>({
