@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useSidebar } from '@/hooks/useSidebar'
-import { mdiTable, mdiViewDashboard } from '@mdi/js'
 import Icon from '@/components/Icon.vue'
 
 const { isOpen } = useSidebar()
@@ -35,7 +34,7 @@ const inactiveClass = ref('text-black hover:opacity-75 hover:text-black')
           :class="[$route.name === 'Dashboard' ? activeClass : inactiveClass]"
           to="/"
         >
-          <Icon :path="mdiViewDashboard" :size="24" />
+          <it-icon name="dashboard" outlined />
         </router-link>
 
         <router-link
@@ -43,7 +42,7 @@ const inactiveClass = ref('text-black hover:opacity-75 hover:text-black')
           :class="[$route.name === 'Table' ? activeClass : inactiveClass]"
           to="/table"
         >
-          <Icon :path="mdiTable" :size="24" />
+          <it-icon name="toc" outlined />
         </router-link>
       </nav>
     </div>
