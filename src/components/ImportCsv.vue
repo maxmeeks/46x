@@ -20,7 +20,7 @@ const importData = reactive<CsvImportData>({
 
 const csvRef = ref<any>(null)
 const name = ref<string>('csv')
-const data = ref<[]>([])
+const data = ref<any[]>([])
 
 const validate = function (file: any): boolean {
   importData.errors = []
@@ -47,6 +47,12 @@ watch(
       header: true,
       complete: function (results, file) {
         data.value = results.data as []
+        data.value = data.value.map((x,i)=> {
+          return {
+            id:i, 
+            ...x
+          }
+        });
         setData(data.value)
       },
     })

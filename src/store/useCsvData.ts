@@ -15,6 +15,11 @@ export const useCsvData = defineStore('csvData', {
     data(state) {
       return state._data
     },
+    row(state) {
+      return (id:number)=> {
+        return state._data.find((x)=> x.id === id);
+      }
+    }
   },
   actions: {
     setData(data: any[]) {

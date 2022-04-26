@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Dashboard from './views/Dashboard.vue'
 import Table from './views/Table.vue'
+import Detail from './views/Detail.vue'
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     name: 'Table',
     component: Table,
   },
+  {
+    path: '/detail/:id',
+    name: 'Detail',
+    component: Detail,
+  }
 ]
 
 const router = createRouter({

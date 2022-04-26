@@ -16,11 +16,17 @@ const showModal = ref<boolean>(false)
 
   <hr class="mt-5 -mb-5" />
 
+
   <div v-if="data">
     <h2 class="text-blue-500">Current Data</h2>
     <ul>
-      <li v-for="row in data">
-        {{ row }}
+      <!-- header row -->
+      <li v-for="(row, index) in data">
+          <router-link
+            :to="{path: '/detail/' + index}"
+          >
+            {{ row }}
+          </router-link>
       </li>
     </ul>
   </div>
