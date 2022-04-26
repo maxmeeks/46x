@@ -1,22 +1,20 @@
 <script setup lang="ts">
-    import { onMounted } from 'vue';
-    import { useRoute } from 'vue-router';
-    import { useCsvData } from '@/store/usecsvData';
+import { onMounted } from 'vue'
+import { useRoute } from 'vue-router'
+import { useCsvData } from '@/store/usecsvData'
 
-    const {row} = useCsvData()
-    const route = useRoute()
+const { row } = useCsvData()
+const route = useRoute()
 
-    const id = route.params.id;
+const id = route.params.id
 
-    const detail = row(parseInt(id as string));
-
-    console.log(id);
+const detail = row(parseInt(id as string))
 </script>
 
 <template>
   <hr class="mt-5 -mb-5" />
   <div>
-      {{ detail }}
+    {{ detail }}
   </div>
 </template>
 
