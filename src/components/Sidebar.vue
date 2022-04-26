@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useSidebar } from '@/hooks/useSidebar'
-import Icon from '@/components/Icon.vue'
 
 const { isOpen } = useSidebar()
 const activeClass = ref(
@@ -34,16 +33,15 @@ const inactiveClass = ref('text-black hover:opacity-75 hover:text-black')
           :class="[$route.name === 'Dashboard' ? activeClass : inactiveClass]"
           to="/"
         >
-          <it-icon name="dashboard" outlined />
+          D
         </router-link>
 
-        <router-link
+        <!-- <router-link
           class="flex justify-center w-full py-2 mt-4"
           :class="[$route.name === 'Table' ? activeClass : inactiveClass]"
           to="/table"
         >
-          <it-icon name="toc" outlined />
-        </router-link>
+        </router-link> -->
       </nav>
     </div>
   </div>
