@@ -30,6 +30,6 @@ const { isOpen } = useSidebar()
       </button>
     </div>
 
-    <nav>Header shit</nav>
+    <nav>Header</nav>
   </header>
 </template>

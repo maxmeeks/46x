@@ -14,22 +14,28 @@ const showModal = ref<boolean>(false)
 <template>
   <ImportCsv />
 
-  <hr class="mt-5 -mb-5" />
-
-
-  <div v-if="data">
-    <h2 class="text-blue-500">Current Data</h2>
-    <ul>
-      <!-- header row -->
-      <li v-for="(row, index) in data">
+  <div class="table-data border border-gray-100 shadow-sm rounded-lg my-6" v-if="data">
+    <table class="border-none">
+      <tr class="row" v-for="(row, index) in data">
           <router-link
+            class="flex-row flex"
             :to="{path: '/detail/' + index}"
           >
-            {{ row }}
+            <div class="cell p-2" v-for="item in row">
+              {{ item }}
+            </div>
           </router-link>
-      </li>
-    </ul>
+      </tr>
+    </table>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+  .row {
+    background: #F5F5F4;
+  }
+
+  .row:nth-child(odd) {
+    background: #FFF;
+  }
+</style>
