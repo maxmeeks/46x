@@ -30,12 +30,12 @@ const showModal = ref<boolean>(false)
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
   .row {
-    background: #F5F5F4;
-  }
+    @apply bg-grey-100;
 
-  .row:nth-child(odd) {
-    background: #FFF;
+    &:nth-child(odd) {
+      background: #FFF;
+    } 
   }
 </style>
