@@ -1,35 +1,20 @@
 <script setup lang="ts">
-import { useSidebar } from '@/hooks/useSidebar'
-
-const { isOpen } = useSidebar()
+import { Menu, MenuButton, MenuItems, MenuItem, Switch } from '@headlessui/vue'
 </script>
 
 <template>
-  <header
-    class="flex items-center justify-between px-6 py-2 bg-white border-b border-gray-2"
-  >
+  <div class="header-wrapper flex bg-white justify-center px-4">
     <div class="flex items-center">
-      <button
-        @click="isOpen = true"
-        class="text-black focus:outline-none lg:hidden"
-      >
-        <svg
-          class="w-6 h-6"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M4 6H20M4 12H20M4 18H11"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-      </button>
+      <router-link to="/dashboard" v-slot="{ isActive }">
+      </router-link>
     </div>
-
-    <nav>Header shit</nav>
-  </header>
+  </div>
 </template>
+
+<style lang="scss" scoped>
+.header-wrapper {
+  height: 80px;
+  z-index: 100;
+  box-shadow: 0 1px 15px rgb(0 0 0 / 4%), 0 1px 6px rgb(0 0 0 / 4%);
+}
+</style>

@@ -1,13 +1,10 @@
 <script setup lang="ts">
-import Sidebar from './Sidebar.vue'
 import Header from './Header.vue'
 import Footer from './Footer.vue'
 </script>
 
 <template>
   <div class="flex h-screen bg-white font-inter">
-    <Sidebar />
-
     <div class="flex-1 flex flex-col overflow-hidden">
       <Header />
 

@@ -21,7 +21,7 @@ const showModal = ref<boolean>(false)
     <h2 class="text-blue-500">Current Data</h2>
     <ul>
       <!-- header row -->
-      <li v-for="(row, index) in data">
+      <li v-for="(row, index) in data" :key="index">
           <router-link
             :to="{path: '/detail/' + index}"
           >
