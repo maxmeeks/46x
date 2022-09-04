@@ -10,6 +10,7 @@ import { useCsvData } from '@/store/useCsvData'
 
 const store = useCsvData()
 const { setData } = store
+const { setHeaders } = store
 
 const importData = reactive<CsvImportData>({
   inputName: 'csv',
@@ -20,6 +21,7 @@ const importData = reactive<CsvImportData>({
 
 const csvRef = ref<any>(null)
 const name = ref<string>('csv')
+const headers = ref<any[]>([])
 const data = ref<any[]>([])
 
 const validate = function (file: any): boolean {
@@ -46,6 +48,7 @@ watch(
     Papa.parse(importData.file as File, {
       header: true,
       complete: function (results, file) {
+        headers.value = results.meta['fields'] as []
         data.value = results.data as []
         data.value = data.value.map((x,i)=> {
           return {
@@ -54,6 +57,7 @@ watch(
           }
         });
         setData(data.value)
+        setHeaders(headers.value)
       },
     })
   },
