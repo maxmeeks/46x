@@ -28,7 +28,7 @@ const showModal = ref<boolean>(false)
         </tr>
       </thead>
       <tbody>
-        <tr class="w-full" v-for="(row, index) in data">
+        <tr class="w-full row" v-for="(row, index) in data">
           <template v-for="(item, name) in row">
             <td v-if="name.toString() != 'id'">
               <router-link class="block w-full h-full" :to="{ path: '/detail/' + index }">
